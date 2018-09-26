@@ -1,0 +1,6 @@
+/* You can add global styles to this file, and also import other style files */
+.fondo{
+    background-size: cover;
+    background-image: linear-gradient(#47a8f7,rgb(0, 247, 255,.9));
+    min-height: -webkit-fill-available;
+}
