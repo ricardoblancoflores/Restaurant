@@ -11,7 +11,13 @@ export class IngredientsService{
         return this.ingredients.slice();
     }
     addIngredient(nIngredient: Ingredient){
-        this.ingredients.push(nIngredient);
+        var ning = this.ingredients.find( Ingredient => Ingredient.name === nIngredient.name);
+        if(ning !== undefined){
+            //this.ingredients[indice].amount = ing.amount + i.amount;
+            ning.amount= ning.amount + nIngredient.amount;
+        }else{
+           this.ingredients.push(nIngredient);
+        }
     }
 
     addingredients(ingredientes: Ingredient[]){
