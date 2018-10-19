@@ -1,9 +1,18 @@
+<<<<<<< HEAD
 <app-header></app-header>
+=======
+<app-header (feactureSelected)="onNavigate($event)"></app-header>
+>>>>>>> origin/master
 <br>
 <div class="container h-100">
   <div class="row  h-100 justify-content-center align-items-center">
     <div class="col-md-10">
+<<<<<<< HEAD
       <router-outlet></router-outlet> 
+=======
+      <app-recipes *ngIf="loadFeature == 'recipe'"></app-recipes>
+      <app-shopping-list *ngIf="loadFeature !== 'recipe'"></app-shopping-list>
+>>>>>>> origin/master
     </div>
   </div>
 </div>

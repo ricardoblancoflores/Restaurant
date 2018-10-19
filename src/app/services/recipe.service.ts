@@ -1,12 +1,20 @@
 import { Recipe } from "../recipes/recipes.model";
+<<<<<<< HEAD
 import { EventEmitter, Injectable } from "@angular/core";
 import { Ingredient } from "../shared/ingredients.model";
 import { IngredientsService } from "./Ingredients.service";
+=======
+import { EventEmitter } from "@angular/core";
+import { Ingredient } from "../shared/ingredients.model";
+>>>>>>> origin/master
 
 @Injectable()
 export class RecipeService{
     recipeSelected = new EventEmitter<Recipe>();
+<<<<<<< HEAD
     constructor(private ingredientServ: IngredientsService){}
+=======
+>>>>>>> origin/master
     private recipes: Recipe[]=[
         new Recipe('Pizza','Pizza hawaiana',
         'https://images.firstwefeast.com/complex/images/fl_lossy,q_auto/v1/xh7g5sgtximbqev3plah/pizza-hut-vs-dominos',
@@ -19,9 +27,12 @@ export class RecipeService{
           return this.recipes.slice();
       }
 
+<<<<<<< HEAD
       addtoShop(ingredients: Ingredient[]){
         this.ingredientServ.addingredients(ingredients);
       }
 
+=======
+>>>>>>> origin/master
 }
 
