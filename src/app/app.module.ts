@@ -9,10 +9,7 @@ import { RecipesListComponent } from './recipes/recipes-list/recipes-list.compon
 import { RecipesItemComponent } from './recipes/recipes-list/recipes-item/recipes-item.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { IngredientsService } from './services/Ingredients.service';
-<<<<<<< HEAD
 import { AppRoutingModule } from './app-routing.module';
-=======
->>>>>>> origin/master
 
 @NgModule({
   declarations: [
@@ -32,12 +29,6 @@ import { AppRoutingModule } from './app-routing.module';
   providers: [//Uso de servicios por padre
     IngredientsService
   ],
-<<<<<<< HEAD
-=======
-  providers: [//Uso de servicios por padre
-    IngredientsService
-  ],
->>>>>>> origin/master
   bootstrap: [AppComponent]
 })
 export class AppModule { }
