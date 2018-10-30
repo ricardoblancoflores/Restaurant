@@ -1,8 +1,7 @@
 import { Ingredient } from "../shared/ingredients.model";
-import { EventEmitter } from "@angular/core";
 import { Subject } from "rxjs";
 export class IngredientsService{
-    actlist = new EventEmitter<void>();
+    actlist = new Subject<void>();
     startedEditing = new Subject<number>();
     private ingredients: Ingredient[]=[
         new Ingredient('Tomatoes', 5),
@@ -16,7 +15,6 @@ export class IngredientsService{
     addIngredient(nIngredient: Ingredient){
         var ning = this.ingredients.find( Ingredient => Ingredient.name === nIngredient.name);
         if(ning !== undefined){
-            //this.ingredients[indice].amount = ing.amount + i.amount;
             ning.amount= ning.amount + nIngredient.amount;
         }else{
            this.ingredients.push(nIngredient);
@@ -39,5 +37,9 @@ export class IngredientsService{
 
     getIngridient(inde: number){
         return this.ingredients[inde];
+    }
+
+    updateIngredient(index: number, ing: Ingredient){
+        this.ingredients[index] = ing;
     }
 }
