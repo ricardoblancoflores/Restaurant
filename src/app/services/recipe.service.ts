@@ -5,7 +5,7 @@ import { IngredientsService } from "./Ingredients.service";
 
 @Injectable()
 export class RecipeService{
-    recipeSelected = new EventEmitter<Recipe>();
+    //recipeSelected = new EventEmitter<Recipe>();
     constructor(private ingredientServ: IngredientsService){}
     private recipes: Recipe[]=[
         new Recipe('Pizza','Pizza hawaiana',
@@ -19,6 +19,9 @@ export class RecipeService{
           return this.recipes.slice();
       }
 
+      getRecipe(index: number){
+          return this.recipes[index];
+      }
       addtoShop(ingredients: Ingredient[]){
         this.ingredientServ.addingredients(ingredients);
       }

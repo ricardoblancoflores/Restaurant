@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Recipe } from '../recipes.model';
 import { RecipeService } from 'src/app/services/recipe.service';
+import { Router, Params, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-recipes-detial',
@@ -8,10 +9,21 @@ import { RecipeService } from 'src/app/services/recipe.service';
   styleUrls: ['./recipes-detial.component.css']
 })
 export class RecipesDetialComponent implements OnInit {
- @Input() recipe:Recipe;
-  constructor(private recipeserv: RecipeService) { }
+// @Input() 
+recipe:Recipe;
+id: number;
+  constructor(private recipeserv: RecipeService,
+    private route: ActivatedRoute, private router: Router) { }
  
   ngOnInit() {
+    this.route.params.subscribe((param:Params) => {
+      this.id = +param['id'];
+      this.recipe = this.recipeserv.getRecipe(this.id);
+    })
+  }
+
+  onEditRecipe(){
+    this.router.navigate(['edit'],{relativeTo: this.route})
   }
 
   toShop(){

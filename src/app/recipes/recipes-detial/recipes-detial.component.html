@@ -1,5 +1,5 @@
 
-<div class="card text-white bg-primary mb-3" style="width: 18rem;">
+<div class="card text-white mb-3" style="width: 18rem; background-image: linear-gradient(#2beed4,#a318ff,#667391)">
   <img class="card-img-top" [src]="recipe.imagePath" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">{{recipe.name}}</h5>
@@ -10,7 +10,7 @@
       </button>
       <div class="dropdown-menu">
         <a style="cursor: pointer;" (click)="toShop()" class="dropdown-item" routerLink="/shoppinglist" routerLinkActive="active">To shopping List</a>
-        <a style="cursor: pointer;"  class="dropdown-item">Edit Recipes</a>
+        <a style="cursor: pointer;" (click)="onEditRecipe()" class="dropdown-item">Edit Recipes</a>
         <a style="cursor: pointer;"  class="dropdown-item">Delete Recipe</a>
       </div>
     </div>
