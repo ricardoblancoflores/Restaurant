@@ -24,12 +24,14 @@
             ],
             "styles": [
               "src/styles.css",
-              "./node_modules/bootstrap/dist/css/bootstrap.css"
+              "./node_modules/bootstrap/dist/css/bootstrap.css",
+              "./node_modules/jquery-confirm/css/jquery-confirm.css"
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.js",
               "./node_modules/popper.js/dist/umd/popper.js",
-              "./node_modules/bootstrap/dist/js/bootstrap.js"
+              "./node_modules/bootstrap/dist/js/bootstrap.js",
+              "./node_modules/jquery-confirm/js/jquery-confirm.js"
             ]
           },
           "configurations": {

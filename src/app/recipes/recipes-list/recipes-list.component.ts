@@ -16,6 +16,13 @@ export class RecipesListComponent implements OnInit {
  
   ngOnInit() {
     this.recipes = this.recipeService.getRecipes();
+    this.recipeService.RecipeUpdate.subscribe((event)=>{
+      this.recipes = this.recipeService.getRecipes();
+    })
+  }
+
+  ngOnDestroy(){
+    this.recipeService.RecipeUpdate.unsubscribe();
   }
 
   onNew(){

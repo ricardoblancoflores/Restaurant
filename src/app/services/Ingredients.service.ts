@@ -42,4 +42,8 @@ export class IngredientsService{
     updateIngredient(index: number, ing: Ingredient){
         this.ingredients[index] = ing;
     }
+
+    delteItem(i: number){
+        this.ingredients.splice(i, 1);
+    }
 }

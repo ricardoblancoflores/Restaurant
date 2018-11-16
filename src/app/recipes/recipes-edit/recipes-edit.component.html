@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="col-12">
+    <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-12">
+          <button class="btn btn-danger" type="button">Cancel</button>
+          <button class="btn btn-success" type="submit" [disabled]="!recipeForm.valid">Save</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" name="name" class="form-control" id="name" formControlName='name'>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group-sm">
+            <label for="Url">Url Image:</label>
+            <input type="text" name="Url" class="form-control" id="Url" formControlName='Url'>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group">
+            <label for="desc">Description:</label>
+            <textarea class="form-control" name="desc" id="desc" rows="6" formControlName='desc'></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12" formArrayName="ingredients">
+          <div class="row mb-1" *ngFor="let ingControl of recipeForm.get('ingredients').controls; let i=index"
+            [formGroupName]="i">
+            <div class="col-8">
+              <input type="text" class="form-control" formControlName="name">
+            </div>
+            <div class="col-2">
+              <input type="text" class="form-control" formControlName="amount">
+            </div>
+            <div class="col-2 mb-1">
+              <button class="btn btn-danger">X</button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 mb-2">
+              <button type="button" class="btn btn-primary" (click)=onAddIngredient()>Add Ingredient</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
