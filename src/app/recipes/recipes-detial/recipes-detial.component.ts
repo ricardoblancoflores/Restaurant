@@ -26,6 +26,11 @@ id: number;
     this.router.navigate(['edit'],{relativeTo: this.route})
   }
 
+  onDelete(){
+    this.recipeserv.deleteRecipe(this.id);
+    this.router.navigate(["../"],{relativeTo: this.route})
+  }
+
   toShop(){
     this.recipeserv.addtoShop(this.recipe.ingredients.slice());
   }

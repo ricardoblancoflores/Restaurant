@@ -3,7 +3,7 @@
     <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
       <div class="row">
         <div class="col-12">
-          <button class="btn btn-danger" type="button">Cancel</button>
+          <button class="btn btn-danger" type="button" (click)="onCancel()">Cancel</button>
           <button class="btn btn-success" type="submit" [disabled]="!recipeForm.valid">Save</button>
         </div>
       </div>
@@ -19,7 +19,12 @@
         <div class="col-12">
           <div class="form-group-sm">
             <label for="Url">Url Image:</label>
-            <input type="text" name="Url" class="form-control" id="Url" formControlName='Url'>
+            <input type="url" #Url name="Url" class="form-control" id="Url" formControlName='Url'>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <img class="img-fluid" [src]=Url.value>
+            </div>
           </div>
         </div>
       </div>
@@ -42,7 +47,7 @@
               <input type="text" class="form-control" formControlName="amount">
             </div>
             <div class="col-2 mb-1">
-              <button class="btn btn-danger">X</button>
+              <button class="btn btn-danger" type="button" (click)="deleteItem(i)"> X </button>
             </div>
           </div>
           <div class="row">
